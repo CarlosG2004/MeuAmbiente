@@ -1,0 +1,9 @@
+títulos em preto,
+em anotações o tamanho não é aplicado ao texto em lista ao clicar no tipo ele n altera ao não ser selecionando
+em imagem ao selecionar n consigo dimensionar a imagem fica em tela cheia.
+em tabela 3 riscos n funciona,
+em cor falta escolher a cor personalizada,
+não consigo calcular,
+fazer função selecionar tabela aonde pessoa clica e desliza as tabelas,
+falta excluir tabela,
+ao segurar falta botar opção desfazer

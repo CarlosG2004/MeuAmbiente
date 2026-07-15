@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyCavern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<!-- ====== TOPBAR ====== -->
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn"><span></span><span></span></button>
+</div>
+
+<!-- ====== OVERLAY (para fechar sidebar/modal clicando fora) ====== -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ====== SIDEBAR ====== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">MyCavern</div>
+
+  <div class="sidebar-section" data-sec="recentes">
+    <button class="sidebar-section-btn">Recentes <span class="ic">▾</span></button>
+    <div class="sidebar-section-body" id="recentesBody"></div>
+  </div>
+
+  <div class="sidebar-section" data-sec="privado">
+    <button class="sidebar-section-btn">Privado <span class="ic">▾</span></button>
+    <div class="sidebar-section-body" id="privadoBody"></div>
+  </div>
+
+  <div class="sidebar-section" data-sec="calendario">
+    <button class="sidebar-section-btn">Calendário <span class="ic">▾</span></button>
+    <div class="sidebar-section-body" id="calendarioBody">
+      <div class="calendar-header">
+        <button id="calPrev">‹</button>
+        <div class="calendar-title" id="calTitle"></div>
+        <button id="calNext">›</button>
+      </div>
+      <div class="calendar-grid" id="calGrid"></div>
+    </div>
+  </div>
+
+  <div class="sidebar-section" data-sec="calculadora">
+    <button class="sidebar-section-btn">Calculadora <span class="ic">▾</span></button>
+    <div class="sidebar-section-body" id="calculadoraBody">
+      <div class="calc-display" id="calcDisplay">0</div>
+      <div class="calc-buttons" id="calcButtons"></div>
+      <div class="calc-history" id="calcHistory"></div>
+    </div>
+  </div>
+</aside>
+
+<!-- ====== MAIN ====== -->
+<main>
+
+  <!-- Hero com paralaxe -->
+  <section class="hero">
+    <div class="hero-title">MyCavern</div>
+    <p class="hero-sub">Suas listas, tabelas e anotações, num só lugar.</p>
+    <div class="scroll-cue"><span>deslize</span><span class="arrow"></span></div>
+  </section>
+
+  <!-- Cards de escolha (paralaxe scroll) -->
+  <section class="picker-section">
+    <div class="picker-eyebrow">o que você quer criar?</div>
+    <div class="picker-cards">
+      <button class="picker-card lista" data-type="lista">
+        <span class="emoji">📋</span>
+        <h3>Lista</h3>
+        <p>Tarefas com prioridade e uma carinha pra cada nível de urgência.</p>
+        <span class="go">criar lista →</span>
+      </button>
+      <button class="picker-card tabela" data-type="tabela">
+        <span class="emoji">📊</span>
+        <h3>Tabela</h3>
+        <p>Linhas e colunas editáveis, redimensione do seu jeito.</p>
+        <span class="go">criar tabela →</span>
+      </button>
+      <button class="picker-card nota" data-type="nota">
+        <span class="emoji">📝</span>
+        <h3>Anotação</h3>
+        <p>Texto livre, formatado, público ou trancado com senha.</p>
+        <span class="go">criar anotação →</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Workspace com abas -->
+  <section class="workspace">
+    <h2 class="workspace-title">Seus itens</h2>
+    <div class="workspace-tabs" id="workspaceTabs"></div>
+    <div class="workspace-empty" id="workspaceEmpty" style="display:none;"></div>
+    <div class="item-grid" id="itemGrid"></div>
+  </section>
+
+</main>
+
+<!-- ====== FAB (+) ====== -->
+<button class="fab" id="fabBtn" title="Criar novo item">+</button>
+
+<!-- ====== BARRA DE PESQUISA ====== -->
+<div class="search-results" id="searchResults"></div>
+<div class="search-bar">
+  <span class="ic">🔍</span>
+  <input type="text" id="searchInput" placeholder="Pesquisar listas, tabelas, anotações...">
+</div>
+
+<!-- ====== MODAL (banners de criação) ====== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal"></div>
+</div>
+
+<!-- ====== TOAST ====== -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
